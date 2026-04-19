@@ -245,8 +245,8 @@ function setLanguage(lang) {
     if (val !== undefined) el.innerHTML = val;
   });
 
-  // Swap App Store screenshots: zh uses zh set, everything else uses en
-  const ssLang = lang === "zh" ? "zh" : "en";
+  // Swap App Store screenshots per language (fallback to en if folder missing)
+  const ssLang = ["zh", "ja"].includes(lang) ? lang : "en";
   document.querySelectorAll("img[data-screenshot]").forEach((img) => {
     img.src = `assets/screenshots/${ssLang}/${img.dataset.screenshot}`;
   });
