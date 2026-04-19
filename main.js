@@ -188,6 +188,47 @@ function initCTAKeyPulse() {
   });
 }
 
+function initScreenshotsCarousel() {
+  const track = document.getElementById("shots-track");
+  const dots = document.querySelectorAll(".shot-dot");
+  const prevBtn = document.querySelector(".shots-prev");
+  const nextBtn = document.querySelector(".shots-next");
+  if (!track || !dots.length) return;
+
+  const total = track.children.length;
+  let current = 0;
+  let autoTimer;
+
+  function goTo(idx) {
+    current = (idx + total) % total;
+    track.style.transform = `translateX(${-current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle("active", i === current));
+  }
+
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 4500);
+  }
+
+  prevBtn?.addEventListener("click", () => { goTo(current - 1); startAuto(); });
+  nextBtn?.addEventListener("click", () => { goTo(current + 1); startAuto(); });
+  dots.forEach((d) => d.addEventListener("click", () => { goTo(+d.dataset.idx); startAuto(); }));
+
+  const stage = track.closest(".shots-stage");
+  stage?.addEventListener("mouseenter", () => clearInterval(autoTimer));
+  stage?.addEventListener("mouseleave", startAuto);
+
+  // Touch swipe support
+  let touchStartX = 0;
+  track.addEventListener("touchstart", (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener("touchend", (e) => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) { goTo(dx < 0 ? current + 1 : current - 1); startAuto(); }
+  });
+
+  startAuto();
+}
+
 function initLangSwitcher() {
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
@@ -196,6 +237,7 @@ function initLangSwitcher() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initLangSwitcher();
+  initScreenshotsCarousel();
   initHeroEntrance(".hero-card", ".hero-card > *");
   initHeroTilt(".hero-card");
   initSideNavProgress();

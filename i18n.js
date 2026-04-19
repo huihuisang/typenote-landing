@@ -64,6 +64,7 @@ const translations = {
       p3_h: "All processing on-device",
       p3_p: "Audio synthesis, score parsing, and key detection all happen entirely on your Mac using native macOS APIs. Nothing leaves your device.",
     },
+    shots: { heading: "See it in action." },
     cta: {
       kicker: "Free Download",
       title: "One keyboard.<br>Infinite songs.",
@@ -139,6 +140,7 @@ const translations = {
       p3_h: "设备本地处理",
       p3_p: "音频合成、乐谱解析、按键检测全部在设备上完成，使用原生 macOS API，数据不离机。",
     },
+    shots: { heading: "一睹为快。" },
     cta: {
       kicker: "免费下载",
       title: "一块键盘，<br>无限乐曲。",
@@ -214,6 +216,7 @@ const translations = {
       p3_h: "すべてデバイス内で処理",
       p3_p: "音声合成、楽譜解析、キー検出はすべてデバイス上で処理されます。ネイティブ macOS API のみ使用。データは外に出ません。",
     },
+    shots: { heading: "実際の動作を見てみよう。" },
     cta: {
       kicker: "無料ダウンロード",
       title: "1つのキーボード。<br>無限の曲。",
@@ -240,6 +243,12 @@ function setLanguage(lang) {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const val = getVal(translations[lang], el.dataset.i18n);
     if (val !== undefined) el.innerHTML = val;
+  });
+
+  // Swap App Store screenshots: zh uses zh set, everything else uses en
+  const ssLang = lang === "zh" ? "zh" : "en";
+  document.querySelectorAll("img[data-screenshot]").forEach((img) => {
+    img.src = `assets/screenshots/${ssLang}/${img.dataset.screenshot}`;
   });
 
   document.querySelectorAll(".lang-btn").forEach((btn) => {
