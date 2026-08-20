@@ -1036,3 +1036,8 @@ html[lang="ja"] .cta-title { font-size: clamp(2rem, 4.5vw, 4.5rem); }
   .shots-arrow { display: none; }
 }
 html[lang="ja"] .faq-big-title { font-size: clamp(2.5rem, 7vw, 6.5rem); }
+
+/* Keep the hero badge inside the viewport on phones */
+@media (max-width: 640px) {
+  .hero-badge { transform: translate(-5%, -45%); }
+}
