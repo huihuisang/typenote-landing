@@ -1040,5 +1040,5 @@ html[lang="ja"] .faq-big-title { font-size: clamp(2.5rem, 7vw, 6.5rem); }
 
 /* Keep the hero badge inside the viewport on phones */
 @media (max-width: 640px) {
-  .hero-badge { transform: translate(-5%, -45%); }
+  .hero-badge { transform: translate(0, -45%); }
 }
