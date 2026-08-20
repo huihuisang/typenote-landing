@@ -902,14 +902,15 @@ a.bento-card, a.bento-card h3, a.bento-card p, a.bento-card * { text-decoration:
 
 .lang-switcher {
   display: flex;
-  gap: 3px;
+  gap: 4px;
 }
 .lang-btn {
   font-family: var(--font-body);
-  font-size: 0.58rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  padding: 0.28rem 0.5rem;
+  padding: 0.45rem 0.62rem;
+  min-height: 32px;
   border-radius: 5px;
   background: transparent;
   color: var(--ink-muted);
@@ -925,7 +926,7 @@ a.bento-card, a.bento-card h3, a.bento-card p, a.bento-card * { text-decoration:
 .section-cta .lang-btn:hover { background: rgba(242,237,228,0.1); color: #f2ede4; }
 .section-cta .lang-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-.mobile-bar-right { display: flex; align-items: center; gap: 10px; }
+.mobile-bar-right { display: flex; align-items: center; gap: 14px; }
 .mobile-logo-wrap { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--ink); }
 .mobile-logo-wrap .mobile-brand { font-family: var(--font-display); font-size: 1rem; }
 
