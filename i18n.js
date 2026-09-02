@@ -76,7 +76,7 @@ const translations = {
   },
 
   zh: {
-    nav: { play: "演奏", features: "功能", guide: "格式", faq: "问答", privacy: "隐私", download: "下载", by: "by 啊叽咕" },
+    nav: { play: "演奏", features: "功能", guide: "格式", faq: "问答", privacy: "隐私", download: "下载", sound: "音效指南", by: "by 啊叽咕" },
     hero: {
       badge: "macOS 免费",
       title: "键盘还是那个键盘，<br>只是声音换了。",
@@ -152,7 +152,7 @@ const translations = {
   },
 
   ja: {
-    nav: { play: "演奏", features: "機能", guide: "記法", faq: "FAQ", privacy: "規約", download: "DL", by: "by ajigu" },
+    nav: { play: "演奏", features: "機能", guide: "記法", faq: "FAQ", privacy: "規約", download: "DL", sound: "サウンドガイド", by: "by ajigu" },
     hero: {
       badge: "macOS 無料",
       title: "キーボードはそのまま。<br>音だけが変わる。",
