@@ -258,3 +258,6 @@ function setLanguage(lang) {
     btn.classList.toggle("active", btn.dataset.lang === lang);
   });
 }
+
+// Apply resolved language on load (URL param wins over stored choice)
+setLanguage(currentLang);
