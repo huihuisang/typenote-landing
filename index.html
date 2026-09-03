@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="lang-kit.css">
 
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "TypeNote", "alternateName": ["TypeNote mac app", "keyboard sound app"], "operatingSystem": "macOS 14+", "applicationCategory": "MultimediaApplication", "description": "TypeNote turns your Mac keyboard into a musical instrument. 128 sounds, custom melodies, under 8ms latency.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://typenote.ajigu.com/", "author": {"@type": "Organization", "name": "ajigu", "url": "https://ajigu.com/"}}</script>
   <link rel="canonical" href="https://typenote.ajigu.com/">
@@ -98,13 +99,16 @@
         <a href="#download" class="nav-link"         data-section="download" data-i18n="nav.download">Download</a>
       </div>
     </div>
-    <div class="lang-switcher" aria-label="Language">
-      <button class="lang-btn active" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="zh">中</button>
-      <button class="lang-btn" data-lang="ja">日</button>
-        <button class="lang-btn" data-lang="zht">繁</button>
-        <button class="lang-btn" data-lang="ko">한</button>
-    </div>
+    <details class="langswitch-inline">
+        <summary aria-label="Language">EN ▾</summary>
+        <div class="language-menu">
+          <a href="#" data-lang="en" aria-current="page">English</a>
+          <a href="#" data-lang="zh">简体中文</a>
+          <a href="#" data-lang="zht">繁體中文</a>
+          <a href="#" data-lang="ja">日本語</a>
+          <a href="#" data-lang="ko">한국어</a>
+        </div>
+      </details>
   </nav>
 
   <!-- Mobile top bar -->
@@ -114,13 +118,16 @@
       <span class="mobile-brand">TypeNote</span>
     </a>
     <div class="mobile-bar-right">
-      <div class="lang-switcher">
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="zh">中</button>
-        <button class="lang-btn" data-lang="ja">日</button>
-        <button class="lang-btn" data-lang="zht">繁</button>
-        <button class="lang-btn" data-lang="ko">한</button>
-      </div>
+      <details class="langswitch-inline">
+        <summary aria-label="Language">EN ▾</summary>
+        <div class="language-menu">
+          <a href="#" data-lang="en" aria-current="page">English</a>
+          <a href="#" data-lang="zh">简体中文</a>
+          <a href="#" data-lang="zht">繁體中文</a>
+          <a href="#" data-lang="ja">日本語</a>
+          <a href="#" data-lang="ko">한국어</a>
+        </div>
+      </details>
       <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
         <svg width="22" height="22" aria-hidden="true"><use href="#icon-menu-open"/></svg>
       </button>
@@ -463,6 +470,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="i18n.js?v=2"></script>
+  <script src="lang-kit.js"></script>
   <script src="main.js?v=2"></script>
 </body>
 </html>
