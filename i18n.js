@@ -229,6 +229,9 @@ const translations = {
 };
 
 let currentLang = localStorage.getItem("tn-lang") || "en";
+// Allow language hand-off from other ajigu sites via ?lang=zh|ja|en
+const urlLang = new URLSearchParams(location.search).get("lang");
+if (urlLang && translations[urlLang]) currentLang = urlLang;
 
 function getVal(obj, path) {
   return path.split(".").reduce((o, k) => (o ? o[k] : undefined), obj);
