@@ -931,11 +931,11 @@ a.bento-card, a.bento-card h3, a.bento-card p, a.bento-card * { text-decoration:
 .mobile-logo-wrap { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--ink); }
 .mobile-logo-wrap .mobile-brand { font-family: var(--font-display); font-size: 1rem; }
 
-html[lang="zh"] {
+html[lang="zh"], html[lang="zht"] {
   --font-display: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --font-body: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
-html[lang="zh"] .hero-title { font-size: clamp(2rem, 4.5vw, 4rem); }
+html[lang="zh"] .hero-title, html[lang="zht"] .hero-title { font-size: clamp(2rem, 4.5vw, 4rem); }
 html[lang="zh"] .faq-big-title { font-size: clamp(3.5rem, 9vw, 8rem); }
 
 html[lang="ja"] {
