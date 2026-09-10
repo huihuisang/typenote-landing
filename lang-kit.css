@@ -81,6 +81,14 @@
 /* TypeNote placement tweaks */
 .langswitch-inline summary { list-style: none; }
 .langswitch-inline summary::-webkit-details-marker { display: none; }
-.side-nav .langswitch-inline { margin-top: 6px; }
-.side-nav .langswitch-inline .language-menu { left: 0; right: auto; top: calc(100% + 6px); }
+/* Desktop: pin the switcher to the viewport's top-right corner. It stays
+   inside .side-nav so it still hides with the sidebar on mobile, where the
+   mobile bar carries its own switcher. */
+.side-nav .langswitch-inline {
+  position: fixed;
+  top: 22px;
+  right: 22px;
+  margin: 0;
+}
+.side-nav .langswitch-inline .language-menu { left: auto; right: 0; top: calc(100% + 6px); }
 .mobile-bar-right .langswitch-inline .language-menu { right: 0; left: auto; }

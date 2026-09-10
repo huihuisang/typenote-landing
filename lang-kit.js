@@ -34,13 +34,15 @@
   }
 
   function wireNavLinks(container, onSelect, storageKey) {
-    container.querySelectorAll("a[data-language]").forEach(function (a) {
+    container.querySelectorAll("a[data-lang], a[data-language]").forEach(function (a) {
       a.addEventListener("click", function (e) {
-        if (storageKey) writeStorage(storageKey, a.dataset.language);
+        var code = a.dataset.lang || a.dataset.language;
+        if (storageKey) writeStorage(storageKey, code);
         if (typeof onSelect === "function") {
           e.preventDefault();
-          onSelect(a.dataset.language);
+          onSelect(code);
         }
+        container.open = false;
         // navigation mode without onSelect: let the browser follow href
       });
     });
